@@ -1,0 +1,47 @@
+From c6aa4d4bfcbed14f39d070fe7ef90a4b74642ee7 Mon Sep 17 00:00:00 2001
+From: Akira TAGOH <akira@tagoh.org>
+Date: Tue, 18 Mar 2014 11:51:37 +0900
+Subject: [PATCH] Bug 73291 - poppler does not show fl ligature
+
+commented out substitutions for TeX Gyre Termes font
+until the broken font are fixed.
+
+https://bugs.freedesktop.org/show_bug.cgi?id=73291
+---
+ conf.d/30-metric-aliases.conf | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/conf.d/30-metric-aliases.conf b/conf.d/30-metric-aliases.conf
+index 49a9602..08c8ba3 100644
+--- a/conf.d/30-metric-aliases.conf
++++ b/conf.d/30-metric-aliases.conf
+@@ -77,12 +77,15 @@ but in an order preferring similar designs first.  We do this in three steps:
+ 	  </default>
+ 	</alias>
+ 
++<!--
++     Due to Bug#73291, commented out those lines until the broken font are fixed.
+ 	<alias binding="same">
+ 	  <family>TeX Gyre Termes</family>
+ 	  <default>
+ 	  <family>Times</family>
+ 	  </default>
+ 	</alias>
++-->
+ 
+ 	<alias binding="same">
+ 	  <family>Nimbus Mono L</family>
+@@ -415,7 +418,10 @@ but in an order preferring similar designs first.  We do this in three steps:
+ 	<alias binding="same">
+ 	  <family>Times</family>
+ 	  <accept>
++<!--
++     Due to Bug#73291, commented out this line until the broken font are fixed.
+ 	  <family>TeX Gyre Termes</family>
++-->
+ 	  <family>Nimbus Roman No9 L</family>
+ 	  </accept>
+ 	</alias>
+-- 
+2.0.0
+
